@@ -1,0 +1,44 @@
+<h3>Find Employee By First Name</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="firstName" name="firstName">
+    </div>
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Hire Date</th>
+      <th>Job ID</th>
+      <th>Salary</th>
+      <th>Commission PCT</th>
+      <th>Manager ID</th>
+      <th>Department ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.employeeId}}</td>
+      <td>{{employee.firstName}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.email}}</td>
+      <td>{{employee.phoneNumber}}</td>
+      <td>{{employee.hireDate}}</td>
+      <td>{{employee.jobId}}</td>
+      <td>{{employee.salary}}</td>
+      <td>{{employee.commissionPct}}</td>
+      <td>{{employee.managerId}}</td>
+      <td>{{employee.departmentId}}</td>
+    </tr>
+  <tbody>
+</table>

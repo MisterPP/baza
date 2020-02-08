@@ -1,0 +1,73 @@
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Hire Date</th>
+      <th>Job ID</th>
+      <th>Salary</th>
+      <th>Commission PCT</th>
+      <th>Manager ID</th>
+      <th>Department ID</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <td>{{employee.employeeId}}</td>
+    <td>{{employee.firstName}}</td>
+    <td>{{employee.lastName}}</td>
+    <td>{{employee.email}}</td>
+    <td>{{employee.phoneNumber}}</td>
+    <td>{{employee.hireDate}}</td>
+    <td>{{employee.jobId}}</td>
+    <td>{{employee.salary}}</td>
+    <td>{{employee.commissionPct}}</td>
+    <td>{{employee.managerId}}</td>
+    <td>{{employee.departmentId}}</td>
+    <td>
+      <button class="button btn-primary" (click)='open(content)'>Edit</button>
+      <button class="button btn-danger" (click)='deleteEmployee()'>Delete</button>
+    </td>
+  </tbody>
+</table>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title">Edit Employee</h3>
+    <button type="button" class="close" (click)='modal.dismiss()'>X</button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input class="form-control" name="firstName" [(ngModel)]="employee.firstName">
+        <label for="lastName">Last Name</label>
+        <input class="form-control" name="lastName" [(ngModel)]="employee.lastName">
+        <label for="email">Email</label>
+        <input class="form-control" name="email" [(ngModel)]="employee.email">
+        <label for="phoneNumber">Phone Number</label>
+        <input class="form-control" name="phoneNumber" [(ngModel)]="employee.phoneNumber">
+        <label for="hireDate">Hire Date</label>
+        <input class="form-control" name="hireDate" placeholder="yyyy-mm-dd" [(ngModel)]="employee.hireDate">
+        <label for="jobId">job ID</label>
+        <input class="form-control" name="jobId" [(ngModel)]="employee.jobId">
+        <label for="salary">Salary</label>
+        <input class="form-control" name="salary" [(ngModel)]="employee.salary">
+        <label for="commissionPct">Commission PCT</label>
+        <input class="form-control" name="commissionPct" [(ngModel)]="employee.commissionPct">
+        <label for="managerId">Manager ID</label>
+        <input class="form-control" name="managerId" [(ngModel)]="employee.managerId">
+        <label for="departmentId">Department ID</label>
+        <input class="form-control" name="departmentId" [(ngModel)]="employee.departmentId">  
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button (click)='modal.close(); update()' class="btn btn-primary">Save</button>
+  </div>
+    
+</ng-template>

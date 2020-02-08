@@ -1,0 +1,61 @@
+<h3>Create Employee</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="employee.email" name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" class="form-control" id="phoneNumber" required [(ngModel)]="employee.phoneNumber" name="phoneNumber">
+    </div>
+
+    <div class="form-group">
+      <label for="hireDate">Hire Date</label>
+      <input type="text" class="form-control" id="hireDate" required [(ngModel)]="employee.hireDate" name="hireDate">
+    </div>
+
+    <div class="form-group">
+      <label for="jobId">job ID</label>
+      <input type="text" class="form-control" id="jobId" required [(ngModel)]="employee.jobId" name="jobId">
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary</label>
+      <input type="text" class="form-control" id="salary" required [(ngModel)]="employee.salary" name="salary">
+    </div>
+
+    <div class="form-group">
+      <label for="commissionPct">Commission PCT</label>
+      <input type="text" class="form-control" id="commissionPct"  [(ngModel)]="employee.commissionPct" name="commissionPct">
+    </div>
+
+    <div class="form-group">
+      <label for="managerId">Manager ID</label>
+      <input type="text" class="form-control" id="managerId" required [(ngModel)]="employee.managerId" name="managerId">
+    </div>
+
+    <div class="form-group">
+      <label for="departmentId">Department ID</label>
+      <input type="text" class="form-control" id="departmentId" required [(ngModel)]="employee.departmentId" name="departmentId">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+ 
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newEmployee()">Add</button>
+</div>

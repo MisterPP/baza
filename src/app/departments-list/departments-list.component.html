@@ -1,0 +1,4 @@
+<h3>Departments</h3>
+<div *ngFor="let department of departments | async">
+      <app-department-details [department] = "department"></app-department-details>
+</div>
